@@ -15,7 +15,7 @@ export default class GetData extends Component {
     }
     render() {
         return (
-            <View>
+            <View style={{flex:1}}>
                 <Text> GET Value: </Text>
                 <FlatList
                 data = {this.state.users}
