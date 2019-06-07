@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View } from 'react-native'
+import { Text, View , FlatList} from 'react-native'
 
 export default class GetData extends Component {
     state ={
@@ -16,12 +16,16 @@ export default class GetData extends Component {
     render() {
         return (
             <View>
-                <Text> textInComponent </Text>
-                {
-                    this.state.users.map(user=> 
-                            <Text> {user._id}: {user.username}</Text>
-                        )
-                }
+                <Text> GET Value: </Text>
+                <FlatList
+                data = {this.state.users}
+                keyExtractor ={(item,index)=>index.toString()}
+                renderItem= { ({item})=>    
+                <View>
+                    <Text> {item.username}</Text>
+                </View>
+            }
+                />
             </View>
         )
     }
