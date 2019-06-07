@@ -19,7 +19,7 @@ export default class GetData extends Component {
                 <Text> GET Value: </Text>
                 <FlatList
                 data = {this.state.users}
-                keyExtractor ={(item,index)=>index.toString()}
+                keyExtractor ={(item,index)=>index.toString()}// this is for removing unique key warning
                 renderItem= { ({item})=>    
                 <View>
                     <Text> {item.username}</Text>
